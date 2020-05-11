@@ -33,6 +33,7 @@ let MostHelpfulReview;
 let MostFunnyReview;
 let FunnyReviewScoreText = "";
 let HelpfulReviewScoreText ="";
+let GameImageURLText = '';
 ///
 
 app.use(express.static('public'));
@@ -84,7 +85,8 @@ app.post('/', function (req, res) {
                     totalPositive: totalPositiveText,
                     totalNegative: totalNegativeText,
                     MostRecentHelpfulReview: MostHelpfulReviewText,
-                    MostRecentFunnyReview: MostFunnyReviewText
+                    MostRecentFunnyReview: MostFunnyReviewText,
+					GameImageURL:GameImageURLText
                 });
 
             });
@@ -92,6 +94,11 @@ app.post('/', function (req, res) {
         console.log("User entered incorrect game title");
         res.render('index', {error: "Incorrect Game Title Inputted"});
     }
+	
+	GameImageURLText = "https://steamcdn-a.akamaihd.net/steam/apps/";
+	GameImageURLText += appID;
+	GameImageURLText += "/header.jpg?";
+	//console.log(GameImageURLText); debug
 
 })
 

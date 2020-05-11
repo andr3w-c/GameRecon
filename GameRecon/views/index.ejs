@@ -14,6 +14,14 @@
 
 <p class="head"> _ __ _____Game Recon_____ __ _</p>
 
+
+<div class="imageHeader">
+		<%var GameImageURL;
+		if(GameImageURL !== null) { %>
+			<img class="gameImg" src= "<%=GameImageURL%>">
+		<% } %>
+</div>
+
 <div class="container">
     <fieldset>
         <form action="/" method="post">
@@ -91,7 +99,7 @@
 
         <% var gameDescription;
         if(gameDescription !== null){ %>
-            <div class="gameDescription"> <%= gameDescription %></div>
+            <div class="gameDescription"> <%- gameDescription %></div>
 
         <% } %>
 
@@ -114,7 +122,6 @@
        
 
         <div class="resp-container">
-            <div class="leftHeader">Use this app id to see a graph depicting player activity for this game: </div>
             <input type="hidden" id="appId" value="<%= ID %>">
             <button onclick="submitGameID()">Click for Graph</button>
             <iframe id='url' src="about:blank" height="389px" width="100%" scrolling="no" frameborder='0'></iframe>

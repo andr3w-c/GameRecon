@@ -16,9 +16,8 @@ body {
 }
 
 fieldset {
-	
-	
-
+	position: relative;
+	left:140px;
     display: block;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
@@ -155,6 +154,7 @@ div.reviewDesc {
 }
 
 div.Rating {
+	font-size: 20px;
     position: relative;
     left: 250px;
     color: #2EEC2D;
@@ -198,6 +198,7 @@ div.gameDescription{
 }
 
 div.leftHeader {
+	font-size: 20px;
     position: relative;
     right: 100px;
     color: #2EEC2D;
@@ -207,6 +208,7 @@ div.leftHeader {
 }
 
 div.rightHeader {
+	font-size: 20px;
     position: relative;
     left: 250px;
     color: #2EEC2D;
@@ -214,3 +216,9 @@ div.rightHeader {
     background: #transparent;
 }
 
+div.imageHeader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
