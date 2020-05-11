@@ -85,6 +85,7 @@ fieldset {
 p {
     color: #2EEC2D;
     background: #5B5B5B;
+	font-size: 15px;
 }
 
 p.Graph {
