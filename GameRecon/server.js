@@ -51,6 +51,7 @@ if (app.get('env') === 'development') {
 
 app.post('/', function (req, res) {
     let u_in = req.body.gameID;
+    u_in = u_in.replace(/\s/g, '');
     console.log('User Inputted: ' + u_in);
     //console.log("Testing: " + NameOrID(u_in));
     DetermineAppID(u_in);
@@ -240,8 +241,8 @@ function FindMostFunnyReview(gameReviews){
 ////
 function NameOrID(input) {
     //console.log("ui = "+ input);
-    var isName = new RegExp(/\d+/);
-    return isName.test(input);
+    var isName = new RegExp(/[A-Za-z]+/);
+    return !isName.test(input);
 }
 
 ///
@@ -292,6 +293,7 @@ function ScrapeAppList() {
                         var name_key = appList.applist.apps[key].name;
                         var UC_name_key = name_key.toUpperCase();
                         var appid_val = appList.applist.apps[key].appid
+                        UC_name_key = UC_name_key.replace(/\s/g, '');
                         appMap.set(name_key, appid_val);
                         appIDMap.set(appid_val, name_key);
                         UpCase_NameMap.set(UC_name_key, name_key);
