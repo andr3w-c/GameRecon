@@ -199,7 +199,7 @@ div.gameDescription{
 }
 
 div.leftHeader {
-	font-size: 20px;
+	font-size: 30px;
     position: relative;
     right: 100px;
     color: #2EEC2D;
@@ -218,7 +218,7 @@ div.DescriptionHeader {
 }
 
 div.rightHeader {
-	font-size: 20px;
+	font-size: 30px;
     position: relative;
     left: 250px;
     color: #2EEC2D;
