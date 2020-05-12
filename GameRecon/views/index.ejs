@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Game Recon</title>
+    <title>Test</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -25,15 +25,9 @@
 <div class="container">
     <fieldset>
         <form action="/" method="post">
-            <input name="gameID" type="text/css" class="ghost-input" placeholder="Enter a Game Name or ID" required>
+            <input name="gameID" type="text/css" class="ghost-input" placeholder="Enter a Game ID" required>
             <button class="ghost-button">Get Game information</button>
         </form>
-
-        <script>
-            function myFunction() {
-
-            }
-        </script>
 
 
         <div class="leftHeader">Game Name:</div>
@@ -95,14 +89,6 @@
             <div class="totalNumber"><%= MostRecentFunnyReview %></div>
         <% } %>
 
-        <div class="leftHeader">Game Description: </div>
-
-        <% var gameDescription;
-        if(gameDescription !== null){ %>
-            <div class="gameDescription"> <%- gameDescription %></div>
-
-        <% } %>
-
         <% var ReviewDetails;
         if(ReviewDetails !== null){ %>
         <% } %>
@@ -119,7 +105,19 @@
         if(ReviewURL !== null){ %>
             <div class="URL"><a href="<%= ReviewURL %>">Review Link</a></div>
         <% } %>
-       
+		
+		<div class="rightHeader">Steam Community link for game:</div>
+        <% var CommunityLinkURL;
+        if(CommunityLinkURL !== null){ %>
+            <div class="URL"><a href="<%= CommunityLinkURL %>">Community Link</a></div>
+        <% } %>
+		
+		<button onclick="document.getElementById('gameDescription').style.display='block' ;">Click for GameDescription</button>
+        <% var gameDescription;
+        if(gameDescription !== null){ %>
+            <div id="gameDescription" style="display:none" > <%- gameDescription %></div>
+        <% } %>
+		
 
         <div class="resp-container">
             <input type="hidden" id="appId" value="<%= ID %>">
@@ -127,10 +125,12 @@
             <iframe id='url' src="about:blank" height="389px" width="100%" scrolling="no" frameborder='0'></iframe>
 
         </div>
+
 		<% var error;
         if(error !== null){ %>
             <p><%= error %></p>
         <% } %>
+		
     </fieldset>
 
 </div>
@@ -139,9 +139,8 @@
     function submitGameID() {
         document.getElementById('url').src = "https://steamdb.info/embed/?appid=" + $('#appId').val();
     }
-
-
 </script>
+
 
 
 </body>

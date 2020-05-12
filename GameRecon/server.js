@@ -34,6 +34,7 @@ let MostFunnyReview;
 let FunnyReviewScoreText = "";
 let HelpfulReviewScoreText ="";
 let GameImageURLText = '';
+let CommunityLinkText = "";
 ///
 
 app.use(express.static('public'));
@@ -87,7 +88,8 @@ app.post('/', function (req, res) {
                     totalNegative: totalNegativeText,
                     MostRecentHelpfulReview: MostHelpfulReviewText,
                     MostRecentFunnyReview: MostFunnyReviewText,
-					GameImageURL:GameImageURLText
+					GameImageURL:GameImageURLText,
+					CommunityLinkURL:CommunityLinkText
                 });
 
             });
@@ -100,6 +102,9 @@ app.post('/', function (req, res) {
 	GameImageURLText += appID;
 	GameImageURLText += "/header.jpg?";
 	//console.log(GameImageURLText); debug
+	
+	CommunityLinkText = "https://steamcommunity.com/app/" + appID;
+	//console.log(CommunityLinkText);
 
 })
 

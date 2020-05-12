@@ -85,7 +85,6 @@ fieldset {
 p {
     color: #2EEC2D;
     background: #5B5B5B;
-	font-size: 15px;
 }
 
 p.Graph {
@@ -191,6 +190,7 @@ div.gameType {
     right: 100px;
     color: #ECFC23;
 }
+
 div.gameDescription{
 	
 	position: relative;
@@ -206,6 +206,15 @@ div.leftHeader {
     text-decoration: underline;
     background: #transparent;
 
+}
+
+div.DescriptionHeader {
+	font-size: 20px;
+    position: relative;
+    right: 100px;
+    color: #2EEC2D;
+    text-decoration: underline;
+    background: #transparent;
 }
 
 div.rightHeader {
